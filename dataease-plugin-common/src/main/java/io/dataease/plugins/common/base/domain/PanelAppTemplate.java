@@ -17,6 +17,8 @@ public class PanelAppTemplate implements Serializable {
 
     private String version;
 
+    private String icon;
+
     private Long updateTime;
 
     private String updateUser;

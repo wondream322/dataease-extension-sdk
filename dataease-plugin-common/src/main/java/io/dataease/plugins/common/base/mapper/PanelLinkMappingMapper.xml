@@ -6,7 +6,6 @@
     <result column="resource_id" jdbcType="VARCHAR" property="resourceId" />
     <result column="user_id" jdbcType="BIGINT" property="userId" />
     <result column="uuid" jdbcType="VARCHAR" property="uuid" />
-    <result column="require_ticket" jdbcType="BIT" property="requireTicket" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, resource_id, user_id, uuid, require_ticket
+    id, resource_id, user_id, uuid
   </sql>
   <select id="selectByExample" parameterType="io.dataease.plugins.common.base.domain.PanelLinkMappingExample" resultMap="BaseResultMap">
     select
@@ -101,9 +100,9 @@
   </delete>
   <insert id="insert" parameterType="io.dataease.plugins.common.base.domain.PanelLinkMapping">
     insert into panel_link_mapping (id, resource_id, user_id, 
-      uuid, require_ticket)
+      uuid)
     values (#{id,jdbcType=BIGINT}, #{resourceId,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, 
-      #{uuid,jdbcType=VARCHAR}, #{requireTicket,jdbcType=BIT})
+      #{uuid,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="io.dataease.plugins.common.base.domain.PanelLinkMapping">
     insert into panel_link_mapping
@@ -120,9 +119,6 @@
       <if test="uuid != null">
         uuid,
       </if>
-      <if test="requireTicket != null">
-        require_ticket,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -136,9 +132,6 @@
       </if>
       <if test="uuid != null">
         #{uuid,jdbcType=VARCHAR},
-      </if>
-      <if test="requireTicket != null">
-        #{requireTicket,jdbcType=BIT},
       </if>
     </trim>
   </insert>
@@ -163,9 +156,6 @@
       <if test="record.uuid != null">
         uuid = #{record.uuid,jdbcType=VARCHAR},
       </if>
-      <if test="record.requireTicket != null">
-        require_ticket = #{record.requireTicket,jdbcType=BIT},
-      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -176,8 +166,7 @@
     set id = #{record.id,jdbcType=BIGINT},
       resource_id = #{record.resourceId,jdbcType=VARCHAR},
       user_id = #{record.userId,jdbcType=BIGINT},
-      uuid = #{record.uuid,jdbcType=VARCHAR},
-      require_ticket = #{record.requireTicket,jdbcType=BIT}
+      uuid = #{record.uuid,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -194,9 +183,6 @@
       <if test="uuid != null">
         uuid = #{uuid,jdbcType=VARCHAR},
       </if>
-      <if test="requireTicket != null">
-        require_ticket = #{requireTicket,jdbcType=BIT},
-      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -204,8 +190,7 @@
     update panel_link_mapping
     set resource_id = #{resourceId,jdbcType=VARCHAR},
       user_id = #{userId,jdbcType=BIGINT},
-      uuid = #{uuid,jdbcType=VARCHAR},
-      require_ticket = #{requireTicket,jdbcType=BIT}
+      uuid = #{uuid,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

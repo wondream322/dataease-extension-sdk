@@ -8,7 +8,6 @@
     <result column="target_view_id" jdbcType="VARCHAR" property="targetViewId" />
     <result column="update_time" jdbcType="BIGINT" property="updateTime" />
     <result column="update_people" jdbcType="VARCHAR" property="updatePeople" />
-    <result column="linkage_active" jdbcType="BIT" property="linkageActive" />
     <result column="ext1" jdbcType="VARCHAR" property="ext1" />
     <result column="ext2" jdbcType="VARCHAR" property="ext2" />
     <result column="copy_from" jdbcType="VARCHAR" property="copyFrom" />
@@ -73,8 +72,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, panel_id, source_view_id, target_view_id, update_time, update_people, linkage_active, 
-    ext1, ext2, copy_from, copy_id
+    id, panel_id, source_view_id, target_view_id, update_time, update_people, ext1, ext2, 
+    copy_from, copy_id
   </sql>
   <select id="selectByExample" parameterType="io.dataease.plugins.common.base.domain.PanelViewLinkageExample" resultMap="BaseResultMap">
     select
@@ -109,12 +108,12 @@
   <insert id="insert" parameterType="io.dataease.plugins.common.base.domain.PanelViewLinkage">
     insert into panel_view_linkage (id, panel_id, source_view_id, 
       target_view_id, update_time, update_people, 
-      linkage_active, ext1, ext2, 
-      copy_from, copy_id)
+      ext1, ext2, copy_from, 
+      copy_id)
     values (#{id,jdbcType=VARCHAR}, #{panelId,jdbcType=VARCHAR}, #{sourceViewId,jdbcType=VARCHAR}, 
       #{targetViewId,jdbcType=VARCHAR}, #{updateTime,jdbcType=BIGINT}, #{updatePeople,jdbcType=VARCHAR}, 
-      #{linkageActive,jdbcType=BIT}, #{ext1,jdbcType=VARCHAR}, #{ext2,jdbcType=VARCHAR}, 
-      #{copyFrom,jdbcType=VARCHAR}, #{copyId,jdbcType=VARCHAR})
+      #{ext1,jdbcType=VARCHAR}, #{ext2,jdbcType=VARCHAR}, #{copyFrom,jdbcType=VARCHAR}, 
+      #{copyId,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="io.dataease.plugins.common.base.domain.PanelViewLinkage">
     insert into panel_view_linkage
@@ -136,9 +135,6 @@
       </if>
       <if test="updatePeople != null">
         update_people,
-      </if>
-      <if test="linkageActive != null">
-        linkage_active,
       </if>
       <if test="ext1 != null">
         ext1,
@@ -171,9 +167,6 @@
       </if>
       <if test="updatePeople != null">
         #{updatePeople,jdbcType=VARCHAR},
-      </if>
-      <if test="linkageActive != null">
-        #{linkageActive,jdbcType=BIT},
       </if>
       <if test="ext1 != null">
         #{ext1,jdbcType=VARCHAR},
@@ -216,9 +209,6 @@
       <if test="record.updatePeople != null">
         update_people = #{record.updatePeople,jdbcType=VARCHAR},
       </if>
-      <if test="record.linkageActive != null">
-        linkage_active = #{record.linkageActive,jdbcType=BIT},
-      </if>
       <if test="record.ext1 != null">
         ext1 = #{record.ext1,jdbcType=VARCHAR},
       </if>
@@ -244,7 +234,6 @@
       target_view_id = #{record.targetViewId,jdbcType=VARCHAR},
       update_time = #{record.updateTime,jdbcType=BIGINT},
       update_people = #{record.updatePeople,jdbcType=VARCHAR},
-      linkage_active = #{record.linkageActive,jdbcType=BIT},
       ext1 = #{record.ext1,jdbcType=VARCHAR},
       ext2 = #{record.ext2,jdbcType=VARCHAR},
       copy_from = #{record.copyFrom,jdbcType=VARCHAR},
@@ -271,9 +260,6 @@
       <if test="updatePeople != null">
         update_people = #{updatePeople,jdbcType=VARCHAR},
       </if>
-      <if test="linkageActive != null">
-        linkage_active = #{linkageActive,jdbcType=BIT},
-      </if>
       <if test="ext1 != null">
         ext1 = #{ext1,jdbcType=VARCHAR},
       </if>
@@ -296,7 +282,6 @@
       target_view_id = #{targetViewId,jdbcType=VARCHAR},
       update_time = #{updateTime,jdbcType=BIGINT},
       update_people = #{updatePeople,jdbcType=VARCHAR},
-      linkage_active = #{linkageActive,jdbcType=BIT},
       ext1 = #{ext1,jdbcType=VARCHAR},
       ext2 = #{ext2,jdbcType=VARCHAR},
       copy_from = #{copyFrom,jdbcType=VARCHAR},

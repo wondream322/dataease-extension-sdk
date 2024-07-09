@@ -52,7 +52,7 @@ public class SysUser implements Serializable {
     @ApiModelProperty("修改时间")
     private Long updateTime;
 
-//    @ApiModelProperty("语言")
+    @ApiModelProperty("语言")
     private String language;
 
     @ApiModelProperty("用户来源")

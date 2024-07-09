@@ -45,8 +45,6 @@ public class PluginSysMenu {
 
     private boolean noLayout;
 
-    private boolean useBasicResource;
-
     private static final long serialVersionUID = 1L;
 
     /**

@@ -17,7 +17,5 @@ public class DeDriver implements Serializable {
 
     private String desc;
 
-    private String surpportVersions;
-
     private static final long serialVersionUID = 1L;
 }

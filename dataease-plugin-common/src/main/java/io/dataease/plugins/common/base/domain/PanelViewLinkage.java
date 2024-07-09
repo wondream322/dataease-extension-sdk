@@ -17,8 +17,6 @@ public class PanelViewLinkage implements Serializable {
 
     private String updatePeople;
 
-    private Boolean linkageActive;
-
     private String ext1;
 
     private String ext2;

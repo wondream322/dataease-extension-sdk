@@ -31,8 +31,6 @@ public class SqlServerSQLConstants extends SQLConstants {
 
     public static final String WHERE_VALUE_VALUE = "'%s'";
 
-    public static final String WHERE_VALUE_VALUE_CH = "N'%s'";
-
     public static final String AGG_COUNT = "COUNT(*)";
 
     public static final String AGG_FIELD = "%s(%s)";
@@ -46,7 +44,5 @@ public class SqlServerSQLConstants extends SQLConstants {
     public static final String GROUP_CONCAT = "string_agg(%s, ',')";
 
     public static final String DEFAULT_DATE_FORMAT = "120";
-
-    public static final String TO_STRING = "cast(%s as varchar(max)) as %s";
 
 }
