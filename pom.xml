@@ -35,6 +35,11 @@
                 <artifactId>dataease-plugin-common</artifactId>
                 <version>${dataease.version}</version>
             </dependency>
+            <dependency>
+                <groupId>jade.dataease</groupId>
+                <artifactId>dataease-plugin-common3</artifactId>
+                <version>${dataease.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>

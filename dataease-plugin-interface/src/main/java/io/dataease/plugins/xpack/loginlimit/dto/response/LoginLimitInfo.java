@@ -14,10 +14,4 @@ public class LoginLimitInfo {
     private String scanCreateUser;
 
     private String multiLogin;
-
-    private String lockedEmail = "false";
-
-    private String openModifyPwd;
-
-    private String pwdCycle = "1";
 }

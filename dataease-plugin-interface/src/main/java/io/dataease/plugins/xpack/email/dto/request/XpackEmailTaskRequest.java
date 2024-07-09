@@ -13,8 +13,6 @@ public class XpackEmailTaskRequest extends XpackTaskCreateRequest {
 
     private String panelId;
 
-    private Integer panelFormat = 0;
-
     private String recipients;
 
     private String pixel;
@@ -32,12 +30,4 @@ public class XpackEmailTaskRequest extends XpackTaskCreateRequest {
     private String conditions;
 
     private String viewDataRange = "view";
-
-    private String groups;
-
-    private Integer extWaitTime = 0;
-
-    private String roleList;
-
-    private String orgList;
 }

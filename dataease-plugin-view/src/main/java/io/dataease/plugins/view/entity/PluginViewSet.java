@@ -16,6 +16,4 @@ public class PluginViewSet {
     private String tableId;
 
     private String sqlVariableDetails;
-
-    private String chartExtRequest;
 }

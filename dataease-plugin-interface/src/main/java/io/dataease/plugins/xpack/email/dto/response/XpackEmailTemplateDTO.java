@@ -13,8 +13,6 @@ public class XpackEmailTemplateDTO implements Serializable {
 
     private String panelId;
 
-    private Integer panelFormat = 0;
-
     private String recipients;
 
     private String pixel;
@@ -34,13 +32,5 @@ public class XpackEmailTemplateDTO implements Serializable {
     private String viewDataRange = "view";
 
     private Boolean status;
-
-    private String groups;
-
-    private Integer extWaitTime = 0;
-
-    private String roleList;
-
-    private String orgList;
 
 }

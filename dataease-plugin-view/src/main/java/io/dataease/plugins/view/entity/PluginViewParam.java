@@ -1,7 +1,6 @@
 package io.dataease.plugins.view.entity;
 
 import io.dataease.plugins.common.request.permission.DataSetRowPermissionsTreeDTO;
-import io.dataease.plugins.view.entity.filter.PluginFilterTreeObj;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 
@@ -15,7 +14,7 @@ public class PluginViewParam {
 
     private List<PluginViewField> pluginViewFields;
 
-    private PluginFilterTreeObj pluginChartFieldCustomFilters;
+    private List<PluginChartFieldCustomFilter> pluginChartFieldCustomFilters;
 
     private List<PluginChartExtFilter> pluginChartExtFilters;
 
